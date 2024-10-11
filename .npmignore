@@ -1,0 +1,16 @@
+# Dist only
+src
+public
+tests
+.turbo
+
+# Configs
+biome.json
+tsconfig.json
+tsup.config.ts
+turbo.json
+vite.config.ts
+.prettierignore
+
+# Markdown
+CONTRIBUTING.md

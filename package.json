@@ -1,0 +1,42 @@
+{
+  "name": "[package]",
+  "version": "0.0.1",
+  "description": "This repository is a template for library.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "lint": "biome lint . && biome format . && prettier --check .",
+    "format": "biome format --write . && prettier --write .",
+    "build": "turbo run build:full",
+    "build:full": "tsup --dts --clean",
+    "dev": "tsup --no-dts --watch",
+    "prepack": "turbo run build:full",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/domin-mnd/[package].git"
+  },
+  "keywords": [],
+  "author": "domin-mnd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/domin-mnd/[package]/issues"
+  },
+  "engines": {
+    "node": ">=12.20.0"
+  },
+  "homepage": "https://github.com/domin-mnd/[package]#readme",
+  "devDependencies": {
+    "@biomejs/biome": "^1.6.2",
+    "@domin-mnd/config": "^0.0.3",
+    "@types/node": "^20",
+    "@vitest/coverage-v8": "^1.4.0",
+    "prettier": "^3.2.5",
+    "tsup": "^8.0.2",
+    "turbo": "^1.13.0",
+    "typescript": "^5.4.3",
+    "vitest": "^1.4.0"
+  }
+}

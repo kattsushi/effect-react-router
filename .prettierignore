@@ -1,0 +1,10 @@
+# Biome
+**/*.tsx
+**/*.ts
+**/*.jsx
+**/*.js
+**/*.json
+**/*.jsonc
+
+# Lock
+pnpm-lock.yaml
