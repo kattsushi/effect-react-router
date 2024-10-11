@@ -1,7 +1,7 @@
 {
   "name": "@kattsushi/effect-react-router",
-  "version": "0.0.1",
-  "description": "Utilities for using react with react-router + effect-ts",
+  "version": "0.0.2",
+  "description": "Utilities for using react with react-router 7 + effect-ts",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",

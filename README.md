@@ -4,16 +4,14 @@
 
 # Overview
 
-This repository is a library template.
+Utilities for using react with react-router 7 + effect-ts
 
 > For any question please open an issue.
 
 # Install
 
 ```bash
-$ npm install [package]
-$ yarn add [package]
-$ pnpm add [package]
+$ npm i @kattsushi/effect-react-router
 ```
 
 # Usage
