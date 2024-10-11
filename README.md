@@ -18,27 +18,27 @@ $ pnpm add [package]
 
 # Usage
 
-Running `npm publish` would build "src/index.ts" and upload a pack with only following items:
+```typescript
+import type * as Route from "./+types.home";
+import { withLoaderEffect, LoaderArgsContext, Ok } from "effect-react-router";
 
-- LICENSE
-- README.md
-- dist/index.d.mts
-- dist/index.d.ts
-- dist/index.js
-- dist/index.mjs
-- package.json
+export const loader = withLoaderEffect(
+  T.gen(function* () {
+    const { request } = yield* LoaderArgsContext
+    yield* T.log("request", request)
+    return yield* T.succeed(new Ok({ data: { hellow: 'world' }}))
+  })
+)
 
-> Removing ESM definition types (dist/index.d.mts") is unnecessary!
-
-## package.json
-
-There's already a preconfigured entry point for both CJS & ESM. JSON file offers a preset with github repository, scripts, development dependencies and some useful empty fields to configure.
-
-## Development dependencies
-
-> It is highly recommended to install biome toolchain & prettier formatter as extensions in your IDE (text editor)!
-
-Template includes [biome](https://biomejs.dev/), [prettier](https://prettier.io/), [tsup](https://tsup.egoist.dev/), [turbo](https://turbo.build/repo), [typescript](https://www.typescriptlang.org/) & [vitest](https://vitest.dev/) preinstalled. There're already a bunch of configs for them.
+export default function Home({ loaderData }: Route.ComponentProps) {
+  return (
+    <div>
+      <h1>Home</h1>
+      <pre>{JSON.stringify(loaderData.data, null, 2)}</pre>
+    </div>
+  )
+}
+```
 
 # License
 
