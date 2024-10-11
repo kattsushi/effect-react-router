@@ -19,8 +19,20 @@ $ pnpm add [package]
 # Usage
 
 ```typescript
+
+// lib/server-runtime.ts
+
+import { makeRuntime } from "@kattsushi/effect-react-router";
+const layers = Layer.empty
+
+export const { withLoaderEffect, withActionEffect } = makeRuntime(layers)
+
+// routes/home.tsx
+
 import type * as Route from "./+types.home";
-import { withLoaderEffect, LoaderArgsContext, Ok } from "effect-react-router";
+import { Ok, LoaderArgsContext } from "@kattsushi/effect-react-router";
+import { withLoaderEffect } from "~/lib/server-runtime";
+import * as T from "effect/Effect" 
 
 export const loader = withLoaderEffect(
   T.gen(function* () {
